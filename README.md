@@ -1,7 +1,6 @@
-# Olympus Service Provider
-
+# Aurora Minds
 This project contains a service provider for the Aurora Minds project.
-The use case is a parent visiting a clinic where children can participate in an ADHD game-test, which, when finished, shows results about the possability of children having ADHD. To do so, one needs to authenticate using the Olympus Front and vIDP using credential.
+The use case is a parent visiting a clinic where children can participate in an ADHD game-test, which, when finished, shows results about the possability of children having ADHD. To do so, one needs to authenticate using the Aurora Minds Front and vIDP using credential.
 This project contains the website of the clinic. Furthermore, it contains a verifier, in which one can verify a pABC token.
 ## Build
 To build the project run 
