@@ -9,7 +9,7 @@ const Watch = ({ user }) => {
     const [details, setDetails] = useState({
         "Full Name": '',
         "Birthdate": '',
-        "Clinician Id": '',
+        "User ID": '',
         "Email": '',
         "Role": '',
     });
@@ -17,7 +17,7 @@ const Watch = ({ user }) => {
     const [revealDetails, setRevealDetails] = useState({
         "Full Name": true,
         "Birthdate": true,
-        "Clinician Id": true,
+        "User ID": true,
         "Email": true,
         "Role": true,
     });
@@ -27,7 +27,7 @@ const Watch = ({ user }) => {
             setDetails({
                 "Full Name": user.profile.name || '',
                 "Birthdate": user.profile.birthdate || '',
-                "Clinician Id": user.profile.nickname || '',
+                "User ID": user.profile.nickname || '',
                 "Email": user.profile.middle_name || '',
                 "Role": user.profile.given_name || '',
             });
@@ -43,7 +43,7 @@ const Watch = ({ user }) => {
 
     const canUserContinue = () => {
         const atLeastOneFieldRevealed = Object.values(revealDetails).some((value) => value === true);
-        const isRole = details["Role"] === "Clinician";
+        const isRole = details["Role"] === "Clinician" || details["Role"] === "Parent";
         return atLeastOneFieldRevealed && isRole;
     };
 
@@ -59,7 +59,7 @@ const Watch = ({ user }) => {
             const predicates = [
                 { Full_Name: user.profile.name, revealed: revealDetails["Full Name"], attribute: "name" },
                 { Birthdate: user.profile.birthdate, revealed: revealDetails["Birthdate"], attribute: "birthdate" },
-                { Clinician_Id: user.profile.nickname, revealed: revealDetails["Clinician Id"], attribute: "nickname" },
+                { Clinician_Id: user.profile.nickname, revealed: revealDetails["User ID"], attribute: "nickname" },
                 { Email: user.profile.middle_name, revealed: revealDetails["Email"], attribute: "middle_name" },
                 { Role: user.profile.given_name, revealed: revealDetails["Role"], attribute: "given_name" },
             ].filter(predicate => predicate.revealed);
@@ -88,8 +88,35 @@ const Watch = ({ user }) => {
                     icon: "success",
                     button: "Ok",
                 }).then(() => {
-                    window.location.href = "http://localhost:8080/verify1";
-                });
+                    //window.location.href = "http://localhost:8080/verify1";
+                    //window.location.href = "https://aurora.dotsoft.gr/login";
+
+                    //console.log('Cookie value:', getCookie('userData'));
+//                    let pageBWindow = window.open('http://localhost:3000/testing');
+//                    pageBWindow.onload = () => {
+//                        pageBWindow.postMessage({ userData: getCookie('userData') }, 'http://localhost:3000');
+
+//                    let pageBWindow = window.open('https://aurora.dotsoft.gr/login');
+//                    pageBWindow.onload = () => {
+//                    //setTimeout(() => {  }, 1000);
+//                    pageBWindow.postMessage({ userData: getCookie('userData') }, 'https://aurora.dotsoft.gr');
+//                    };
+
+                    const pageBWindow = window.open('https://aurora.dotsoft.gr/login');
+
+                    // Listen for messages from the new window
+                    window.addEventListener('message', (event) => {
+                        if (event.origin === 'https://aurora.dotsoft.gr' && event.data.type === 'READY') {
+                            // Send the userData via postMessage
+                            try {
+                                pageBWindow.postMessage({ userData: getCookie('userData') }, 'https://aurora.dotsoft.gr');
+                                console.log('Message sent to window');
+                            } catch (error) {
+                                console.error('Error sending message:', error);
+                            }
+                        }
+                    });
+                    });
             });
         } else {
             swal({

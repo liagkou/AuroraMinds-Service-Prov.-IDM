@@ -164,7 +164,7 @@ class StorageC extends React.Component {
               <Typography variant="body2" style={styles.credentials}>
                 <div>FullName: {user ? user.profile.name : "Mister Unknown"}</div>
                 <div>Birthdate: {user ? user.profile.birthdate : ""}</div>
-                <div>Clinician ID: {user ? user.profile.nickname : "-"}</div>
+                <div>User ID: {user ? user.profile.nickname : "-"}</div>
                 <div>Email: {user ? user.profile.middle_name : "-"}</div>
                 <div>Role: {user ? user.profile.given_name : "-"}</div>
               </Typography>

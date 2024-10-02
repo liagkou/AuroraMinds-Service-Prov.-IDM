@@ -103,9 +103,9 @@ class personalization extends React.Component {
                         <h4 style={{color: "grey"}}>Full Name:{user ? user.profile.name : "Mister Unknown"}</h4>
                         <h4 style={{color: "grey"}}> Username: {user ? user.profile.sub : "Mister Unknown"}</h4>
                         <h4 style={{color: "grey"}}>Birthdate: {user ? user.profile.birthdate : "Birth"}</h4>
-                        <h6 style={{color: "grey"}}>Student Id: {user ? user.profile.nickname : "Student Id"}</h6>
+                        <h4 style={{color: "grey"}}>User ID: {user ? user.profile.nickname : "User ID"}</h4>
                         <h4 style={{color: "grey"}}>Email: {user ? user.profile.middle_name : "Address 01"}</h4>
-                        <h4 style={{color: "grey"}}>Phone Number: {user ? user.profile.family_name : "Address 01"}</h4>
+                       {/* <h4 style={{color: "grey"}}>Phone Number: {user ? user.profile.family_name : "Address 01"}</h4> */}
 
 
                     </Typography>

@@ -16,6 +16,7 @@ import verifier from "../components/watch-verifier"
 import verificationPage from '../components/verificationPage';
 import loginDS from '../components/loginDS';
 import verifyPresentation from '../components/verifyPresentation';
+import testingCookie from '../components/testingCookie';
 const history = syncHistoryWithStore(browserHistory, store);
 
 export default function Routes(props) {
@@ -38,6 +39,7 @@ export default function Routes(props) {
       <Route path="/checkAccessCredential/already/credential/verifier/verificationPage" component= {verifier}/>
       <Route path="/login_DS" component= {loginDS}/>
       <Route path="/login_DS/verifyPresentation" component= {verifyPresentation}/>
+      <Route path="/testing" component= {testingCookie}/>
     </Router>
   );
 }
