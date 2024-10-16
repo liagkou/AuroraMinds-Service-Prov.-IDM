@@ -20,6 +20,6 @@ If the pABC verifier is correctly launched and setup, the message 'Verifier setu
 
 # Aurora Minds videos
 
-https://www.youtube.com/watch?v=NKtMDcRgwh0
+Aurora App https://www.youtube.com/watch?v=NKtMDcRgwh0
 
-https://www.youtube.com/watch?v=RaYKUoo4Crs
+Wallet Verifier https://www.youtube.com/watch?v=RaYKUoo4Crs
