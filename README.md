@@ -16,3 +16,10 @@ This will start the website on localhost:3000, running a supporting pABC verifie
 Note that the supporting pABC verifier connects to the deployed IdPs through https. Thus, you need to copy the file *olympus-identity/oidc-demo-idp/src/test/resources/volatile/truststore.jks* to the *olympus-service-provider/server/ol-lib* directory (replacing the *truststore.jks* file in that location if there was any). 
 
 If the pABC verifier is correctly launched and setup, the message 'Verifier setup at port 3030' will appear (will take 5~7 seconds).
+
+
+# Aurora Minds videos
+
+https://www.youtube.com/watch?v=NKtMDcRgwh0
+
+https://www.youtube.com/watch?v=RaYKUoo4Crs
